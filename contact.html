@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Wyatt through his portfolio contact form.">
+    <title>Wyatt's Portfolio - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Contact Me</h1>
+    <p>Use the form below to get in touch.</p>
+
+<nav aria-label="Main navigation">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+</nav>
+
+</header>
+
+<main class="grid-container">
+
+<section class="contact-form">
+    <h2>Send Me a Message</h2>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Contact Information</legend>
+
+            <p>
+                <label for="name">Full Name:</label>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       autocomplete="name"
+                       required>
+            </p>
+
+            <p>
+                <label for="email">Email Address:</label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       autocomplete="email"
+                       required>
+            </p>
+
+            <p>
+                <label for="phone">Phone Number:</label>
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       autocomplete="tel">
+            </p>
+
+            <p>
+                <label for="date">Preferred Contact Date:</label>
+                <input type="date"
+                       id="date"
+                       name="date">
+            </p>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Message Preferences</legend>
+
+            <p>Preferred method of contact:</p>
+
+            <p>
+                <input type="radio"
+                       id="email-contact"
+                       name="contact-method"
+                       value="email"
+                       required>
+                <label for="email-contact">Email</label>
+            </p>
+
+            <p>
+                <input type="radio"
+                       id="phone-contact"
+                       name="contact-method"
+                       value="phone">
+                <label for="phone-contact">Phone</label>
+            </p>
+
+            <p>
+                <label for="topic">Message Topic:</label>
+
+                <select id="topic" name="topic">
+                    <option value="general">General Question</option>
+                    <option value="project">Project</option>
+                    <option value="school">School</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+
+            <p>
+                <input type="checkbox"
+                       id="updates"
+                       name="updates"
+                       value="yes">
+                <label for="updates">
+                    I would like to receive updates.
+                </label>
+            </p>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Your Message</legend>
+
+            <p>
+                <label for="message">Message:</label>
+            </p>
+
+            <p>
+                <textarea id="message"
+                          name="message"
+                          rows="6"
+                          placeholder="Enter your message here..."
+                          required></textarea>
+            </p>
+
+        </fieldset>
+
+        <p>
+            <button type="submit">Send Message</button>
+            <button type="reset">Clear Form</button>
+        </p>
+
+    </form>
+</section>
+
+<aside class="contact-info">
+    <h2>Other Ways to Connect</h2>
+
+    <p>
+        You can also reach me through email.
+    </p>
+
+    <p>
+        <a href="mailto:danieldennison@ucwv.edu">
+            Send me an email
+        </a>
+    </p>
+</aside>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Wyatt's Portfolio</p>
+</footer>
+
+</body>
+</html>
