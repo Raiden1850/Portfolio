@@ -3,31 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Wyatt's Portfolio</title>
 
+    <title>404 | Wyatt's Portfolio</title>
+
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <!-- 404 Page CSS -->
+    <link rel="stylesheet" href="404.css">
 </head>
 
 <body>
 
-    <main class="error-page">
-        <div class="error-card">
-            <p class="error-code">404</p>
+    <!-- Background decoration -->
+    <div class="background-grid"></div>
 
-            <h1>Looks like you got lost.</h1>
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo">Wyatt's Portfolio</a>
 
-            <p>
-                The page you're looking for doesn't exist,
-                but there's still plenty to explore.
-            </p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-            <a href="index.html" class="home-button">Back to Home</a>
-        </div>
+
+    <!-- Main 404 Content -->
+    <main class="error-container">
+
+        <section class="error-card">
+
+            <!-- Terminal Header -->
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                </div>
+
+                <span class="terminal-title">
+                    wyatt@portfolio: ~/error
+                </span>
+            </div>
+
+
+            <!-- Terminal Content -->
+            <div class="terminal-content">
+
+                <p class="terminal-line">
+                    <span class="prompt">></span>
+                    <span id="terminal-text">Searching for page...</span>
+                </p>
+
+                <p class="terminal-line hidden" id="error-line">
+                    <span class="error-text">ERROR:</span>
+                    Page not found.
+                </p>
+
+                <p class="terminal-line hidden" id="location-line">
+                    <span class="warning-text">WARNING:</span>
+                    The requested destination does not exist.
+                </p>
+
+                <p class="terminal-line hidden" id="solution-line">
+                    <span class="success-text">STATUS:</span>
+                    System still operational.
+                </p>
+
+            </div>
+
+
+            <!-- Big 404 -->
+            <div class="error-number" aria-label="404 Error">
+                <span>4</span>
+                <span class="zero">0</span>
+                <span>4</span>
+            </div>
+
+
+            <!-- Message -->
+            <div class="message">
+
+                <p class="eyebrow">
+                    SYSTEM ERROR // PAGE NOT FOUND
+                </p>
+
+                <h1>
+                    Looks like you got lost.
+                </h1>
+
+                <p>
+                    The page you're looking for doesn't exist,
+                    but there's still plenty to explore.
+                </p>
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="actions">
+
+                <a href="index.html" class="home-button">
+                    <span>←</span>
+                    Back to Home
+                </a>
+
+                <button id="tryAgain" class="secondary-button">
+                    Try Again
+                </button>
+
+            </div>
+
+        </section>
+
     </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Wyatt's Portfolio
+            <span class="separator">|</span>
+            <span class="status-dot"></span>
+            All systems operational
+        </p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="404.js"></script>
 
 </body>
 </html>
