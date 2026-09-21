@@ -1,161 +1,167 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Wyatt through his portfolio contact form.">
+    <meta name="description" content="Contact Wyatt about computer science, cybersecurity, programming, and web development.">
     <title>Wyatt's Portfolio - Contact</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
 <header>
-    <h1>Contact Me</h1>
-    <p>Use the form below to get in touch.</p>
+    <h1>Wyatt's Portfolio</h1>
+    <p>Computer Science and Cybersecurity Student</p>
 
-<nav aria-label="Main navigation">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
-    </ul>
-</nav>
-
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<main class="grid-container">
+<button id="dark-mode-button" type="button">
+    Dark Mode
 
-<section class="contact-form">
-    <h2>Send Me a Message</h2>
+</button>
+<main>
 
-    <form action="#" method="post">
+    <section class="contact-form">
+        <h2>Contact Me</h2>
 
-        <fieldset>
-            <legend>Contact Information</legend>
+        <form action="#" method="post">
 
-            <p>
-                <label for="name">Full Name:</label>
-                <input type="text"
-                       id="name"
-                       name="name"
-                       autocomplete="name"
-                       required>
-            </p>
+            <fieldset>
+                <legend>Contact Information</legend>
 
-            <p>
-                <label for="email">Email Address:</label>
-                <input type="email"
-                       id="email"
-                       name="email"
-                       autocomplete="email"
-                       required>
-            </p>
+                <p>
+                    <label for="name">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required>
+                </p>
 
-            <p>
-                <label for="phone">Phone Number:</label>
-                <input type="tel"
-                       id="phone"
-                       name="phone"
-                       autocomplete="tel">
-            </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required>
+                </p>
 
-            <p>
-                <label for="date">Preferred Contact Date:</label>
-                <input type="date"
-                       id="date"
-                       name="date">
-            </p>
+                <p>
+                    <label for="phone">Phone:</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel">
+                </p>
 
-        </fieldset>
+                <p>
+                    <label for="date">Preferred Contact Date:</label>
+                    <input
+                        type="date"
+                        id="date"
+                        name="date">
+                </p>
+            </fieldset>
 
-        <fieldset>
-            <legend>Message Preferences</legend>
+            <fieldset>
+                <legend>Preferred Contact Method</legend>
 
-            <p>Preferred method of contact:</p>
+                <p>
+                    <input
+                        type="radio"
+                        id="contact-email"
+                        name="contact-method"
+                        value="email"
+                        required>
 
-            <p>
-                <input type="radio"
-                       id="email-contact"
-                       name="contact-method"
-                       value="email"
-                       required>
-                <label for="email-contact">Email</label>
-            </p>
+                    <label for="contact-email">Email</label>
+                </p>
 
-            <p>
-                <input type="radio"
-                       id="phone-contact"
-                       name="contact-method"
-                       value="phone">
-                <label for="phone-contact">Phone</label>
-            </p>
+                <p>
+                    <input
+                        type="radio"
+                        id="contact-phone"
+                        name="contact-method"
+                        value="phone">
 
-            <p>
-                <label for="topic">Message Topic:</label>
+                    <label for="contact-phone">Phone</label>
+                </p>
+            </fieldset>
 
-                <select id="topic" name="topic">
-                    <option value="general">General Question</option>
-                    <option value="project">Project</option>
-                    <option value="school">School</option>
-                    <option value="other">Other</option>
-                </select>
-            </p>
+            <fieldset>
+                <legend>Message</legend>
 
-            <p>
-                <input type="checkbox"
-                       id="updates"
-                       name="updates"
-                       value="yes">
-                <label for="updates">
-                    I would like to receive updates.
-                </label>
-            </p>
+                <p>
+                    <label for="topic">Topic:</label>
 
-        </fieldset>
+                    <select id="topic" name="topic">
+                        <option value="">Select a topic</option>
+                        <option value="programming">Programming</option>
+                        <option value="cybersecurity">Cybersecurity</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="other">Other</option>
+                    </select>
+                </p>
 
-        <fieldset>
-            <legend>Your Message</legend>
+                <p>
+                    <label for="message">Message:</label>
 
-            <p>
-                <label for="message">Message:</label>
-            </p>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        required></textarea>
+                </p>
 
-            <p>
-                <textarea id="message"
-                          name="message"
-                          rows="6"
-                          placeholder="Enter your message here..."
-                          required></textarea>
-            </p>
+                <p>
+                    <input
+                        type="checkbox"
+                        id="updates"
+                        name="updates"
+                        value="yes">
 
-        </fieldset>
+                    <label for="updates">
+                        I would like to receive updates.
+                    </label>
+                </p>
+            </fieldset>
 
-        <p>
             <button type="submit">Send Message</button>
             <button type="reset">Clear Form</button>
+
+        </form>
+    </section>
+
+    <aside class="contact-info">
+        <h2>Contact Information</h2>
+
+        <address>
+            Email:
+            <a href="mailto:danieldennison@ucwv.edu">
+                danieldennison@ucwv.edu
+            </a>
+        </address>
+
+        <p>
+            Feel free to reach out about my projects, skills, or interests
+            in computer science and cybersecurity.
         </p>
-
-    </form>
-</section>
-
-<aside class="contact-info">
-    <h2>Other Ways to Connect</h2>
-
-    <p>
-        You can also reach me through email.
-    </p>
-
-    <p>
-        <a href="mailto:danieldennison@ucwv.edu">
-            Send me an email
-        </a>
-    </p>
-</aside>
+    </aside>
 
 </main>
 
