@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JavaScript DOM manipulation interactive page">
-    <title>DOM Interactive Lab - Wyatt's Portfolio</title>
+    <meta name="description" content="Interactive JavaScript DOM manipulation project">
+    <title>DOM Surgeon Lab - Wyatt's Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="dom.js" defer></script>
@@ -14,7 +14,10 @@
 
     <header>
         <h1 id="page-title">JavaScript DOM Lab</h1>
-        <p id="subtitle">Interactive DOM Manipulation Project</p>
+
+        <p id="subtitle">
+            Interactive DOM Manipulation Project
+        </p>
 
         <nav>
             <ul>
@@ -23,13 +26,16 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="skills.html">Skills</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="dom.html">DOM Lab</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
+        <!-- DOM MANIPULATION -->
         <section id="welcome-section">
+
             <h2>DOM Manipulation</h2>
 
             <p id="description">
@@ -44,9 +50,13 @@
             <button id="toggle-button" type="button">
                 Toggle Highlight
             </button>
+
         </section>
 
+
+        <!-- DYNAMIC CONTENT -->
         <section id="dynamic-section">
+
             <h2>Dynamic Content</h2>
 
             <p id="dynamic-message">
@@ -54,13 +64,28 @@
             </p>
 
             <div id="new-elements"></div>
+
         </section>
 
+
+        <!-- TO-DO LIST -->
         <section id="todo-section">
+
             <h2>To-Do List</h2>
 
+            <p id="task-count">
+                Tasks: 0
+            </p>
+
+            <p id="completed-count">
+                Completed: 0
+            </p>
+
             <form id="todo-form">
-                <label for="todo-input">New Task:</label>
+
+                <label for="todo-input">
+                    New Task:
+                </label>
 
                 <input
                     type="text"
@@ -72,12 +97,15 @@
                 <button type="submit">
                     Add Task
                 </button>
+
             </form>
 
             <ul id="todo-list"></ul>
+
         </section>
 
     </main>
+
 
     <footer>
         <p>&copy; 2026 Wyatt's Portfolio</p>

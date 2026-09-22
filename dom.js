@@ -1,72 +1,101 @@
-
-
 console.log("DOM Lab JavaScript loaded.");
 
-// getElementById()
+
+// =========================================
+// DOM ELEMENT SELECTION
+// =========================================
+
 const title = document.getElementById("page-title");
 
-// querySelector()
 const subtitle = document.querySelector("#subtitle");
 
-// querySelector()
 const description = document.querySelector("#description");
 
-// getElementById()
-const welcomeSection = document.getElementById("welcome-section");
+const welcomeSection =
+    document.getElementById("welcome-section");
 
-// querySelector()
-const dynamicMessage = document.querySelector("#dynamic-message");
+const dynamicMessage =
+    document.querySelector("#dynamic-message");
 
 
-// Modify text using textContent
+// =========================================
+// MODIFY EXISTING DOM
+// =========================================
+
 title.textContent = "JavaScript DOM Surgeon Lab";
 
-// Modify text
-subtitle.textContent = "This page changes itself with JavaScript.";
+subtitle.textContent =
+    "This page changes itself with JavaScript.";
 
-// Modify text
 description.textContent =
     "JavaScript is selecting and modifying elements on this page.";
 
-// Modify HTML
 dynamicMessage.innerHTML =
     "<strong>JavaScript successfully modified this message!</strong>";
 
-// Modify a class
 welcomeSection.classList.add("dom-active");
 
-console.log("Five DOM elements modified.");
+console.log("Existing DOM elements modified.");
 
 
-const toggleButton = document.getElementById("toggle-button");
+// =========================================
+// TOGGLE HIGHLIGHT
+// =========================================
+
+const toggleButton =
+    document.getElementById("toggle-button");
 
 toggleButton.addEventListener("click", function () {
+
     welcomeSection.classList.toggle("highlight");
 
     console.log("Highlight class toggled.");
+
 });
 
-const newElements = document.getElementById("new-elements");
 
-// Create first element
-const firstElement = document.createElement("p");
-firstElement.textContent = "This paragraph was created with JavaScript.";
+// =========================================
+// CREATE DYNAMIC ELEMENTS
+// =========================================
+
+const newElements =
+    document.getElementById("new-elements");
+
+const firstElement =
+    document.createElement("p");
+
+firstElement.textContent =
+    "This paragraph was created with JavaScript.";
+
 newElements.appendChild(firstElement);
 
-// Create second element
-const secondElement = document.createElement("p");
-secondElement.textContent = "This is another dynamically created element.";
+
+const secondElement =
+    document.createElement("p");
+
+secondElement.textContent =
+    "This is another dynamically created element.";
+
 newElements.appendChild(secondElement);
 
-// Create third element
-const thirdElement = document.createElement("p");
-thirdElement.textContent = "The DOM can create content while the page is running.";
+
+const thirdElement =
+    document.createElement("p");
+
+thirdElement.textContent =
+    "The DOM can create content while the page is running.";
+
 newElements.appendChild(thirdElement);
 
-console.log("Three new elements created and appended.");
+console.log("Three dynamic elements created.");
 
 
-const changeButton = document.getElementById("change-button");
+// =========================================
+// CHANGE PAGE BUTTON
+// =========================================
+
+const changeButton =
+    document.getElementById("change-button");
 
 changeButton.addEventListener("click", function () {
 
@@ -77,63 +106,293 @@ changeButton.addEventListener("click", function () {
 
     changeButton.textContent = "Changed!";
 
-    console.log("Page content changed with JavaScript.");
+    console.log("Page content changed.");
+
 });
 
-const todoForm = document.getElementById("todo-form");
-const todoInput = document.getElementById("todo-input");
-const todoList = document.getElementById("todo-list");
+
+// =========================================
+// TO-DO LIST ELEMENTS
+// =========================================
+
+const todoForm =
+    document.getElementById("todo-form");
+
+const todoInput =
+    document.getElementById("todo-input");
+
+const todoList =
+    document.getElementById("todo-list");
+
+const taskCountDisplay =
+    document.getElementById("task-count");
+
+const completedCountDisplay =
+    document.getElementById("completed-count");
 
 
-// Add a new task
+// =========================================
+// APPLICATION STATE
+// =========================================
+
+let taskCount = 0;
+
+let completedCount = 0;
+
+
+// =========================================
+// UPDATE COUNTERS
+// =========================================
+
+function updateCounters() {
+
+    taskCountDisplay.textContent =
+        `Tasks: ${taskCount}`;
+
+    completedCountDisplay.textContent =
+        `Completed: ${completedCount}`;
+
+    console.log(
+        `Tasks: ${taskCount} | Completed: ${completedCount}`
+    );
+
+}
+
+
+// =========================================
+// ADD TASK
+// =========================================
+
 todoForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
 
-    const taskText = todoInput.value.trim();
+
+    // Get user input
+
+    const taskText =
+        todoInput.value.trim();
+
+
+    // Prevent empty tasks
 
     if (taskText === "") {
+
         return;
+
     }
 
-    // Create list item
-    const listItem = document.createElement("li");
 
-    // ES6 template literal
-    listItem.innerHTML = `
-        <span>${taskText}</span>
-        <button type="button" class="complete-button">
-            Complete
-        </button>
-    `;
+    // =====================================
+    // CREATE LIST ITEM
+    // =====================================
+
+    const listItem =
+        document.createElement("li");
+
+
+    // =====================================
+    // CREATE TASK TEXT
+    // =====================================
+
+    const taskSpan =
+        document.createElement("span");
+
+    taskSpan.textContent =
+        taskText;
+
+
+    // =====================================
+    // CREATE COMPLETE BUTTON
+    // =====================================
+
+    const completeButton =
+        document.createElement("button");
+
+    completeButton.type = "button";
+
+    completeButton.textContent =
+        "Complete";
+
+    completeButton.classList.add(
+        "complete-button"
+    );
+
+
+    // =====================================
+    // CREATE REMOVE BUTTON
+    // =====================================
+
+    const removeButton =
+        document.createElement("button");
+
+    removeButton.type = "button";
+
+    removeButton.textContent =
+        "Remove";
+
+    removeButton.classList.add(
+        "remove-button"
+    );
+
+
+    // =====================================
+    // ADD ELEMENTS TO LIST ITEM
+    // =====================================
+
+    listItem.appendChild(taskSpan);
+
+    listItem.appendChild(completeButton);
+
+    listItem.appendChild(removeButton);
+
+
+    // =====================================
+    // ADD LIST ITEM TO PAGE
+    // =====================================
 
     todoList.appendChild(listItem);
 
-    console.log("New task added:", taskText);
+
+    // =====================================
+    // UPDATE STATE
+    // =====================================
+
+    taskCount++;
+
+    updateCounters();
+
+
+    console.log(
+        "New task added:",
+        taskText
+    );
+
 
     // Clear input
+
     todoInput.value = "";
 
-    // Find complete button
-    const completeButton =
-        listItem.querySelector(".complete-button");
 
-    // Mark task complete
-    completeButton.addEventListener("click", function () {
+// =========================================
+// COMPLETE / UNDO TASK
+// =========================================
 
-        listItem.classList.toggle("completed");
+    completeButton.addEventListener(
+        "click",
+        function () {
 
-        console.log("Task completion toggled:", taskText);
-    });
+            const isCompleted =
+                listItem.classList.contains("completed");
+
+
+            if (isCompleted) {
+
+                // Change back to incomplete
+
+                listItem.classList.remove(
+                    "completed"
+                );
+
+                completedCount--;
+
+                completeButton.textContent =
+                    "Complete";
+
+                console.log(
+                    "Task marked incomplete:",
+                    taskText
+                );
+
+            } else {
+
+                // Mark task as completed
+
+                listItem.classList.add(
+                    "completed"
+                );
+
+                completedCount++;
+
+                completeButton.textContent =
+                    "Undo";
+
+                console.log(
+                    "Task marked complete:",
+                    taskText
+                );
+
+            }
+
+
+            updateCounters();
+
+        }
+    );
+
+
+// =========================================
+// REMOVE TASK
+// =========================================
+
+    removeButton.addEventListener(
+        "click",
+        function () {
+
+            const isCompleted =
+                listItem.classList.contains("completed");
+
+
+            // If completed, update completed count
+
+            if (isCompleted) {
+
+                completedCount--;
+
+            }
+
+
+            // Remove element from DOM
+
+            listItem.remove();
+
+
+            // Update total task count
+
+            taskCount--;
+
+
+            // Update displayed counters
+
+            updateCounters();
+
+
+            console.log(
+                "Task removed:",
+                taskText
+            );
+
+        }
+    );
+
 });
 
+
+// =========================================
+// PROJECT INFORMATION
+// =========================================
+
 const pageName = "DOM Surgeon";
-let taskCount = 0;
 
-console.log(`Current project: ${pageName}`);
-console.log(`Task count starts at ${taskCount}`);
+const message =
+    `Welcome to the ${pageName} project.`;
 
+console.log(
+    `Current project: ${pageName}`
+);
 
-const message = `Welcome to the ${pageName} project.`;
+console.log(
+    `Task count starts at ${taskCount}`
+);
 
 console.log(message);
