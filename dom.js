@@ -1,3 +1,5 @@
+// DOM Surgeon Lab - demonstrates DOM selection,
+// dynamic elements, event handling, and state management.
 console.log("DOM Lab JavaScript loaded.");
 
 
