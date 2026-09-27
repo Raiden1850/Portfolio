@@ -29,14 +29,14 @@
 
 <button id="dark-mode-button" type="button">
     Dark Mode
-
 </button>
+
 <main>
 
     <section class="contact-form">
         <h2>Contact Me</h2>
 
-        <form action="#" method="post">
+        <form id="contact-form" action="#" method="post" novalidate>
 
             <fieldset>
                 <legend>Contact Information</legend>
@@ -49,6 +49,7 @@
                         name="name"
                         autocomplete="name"
                         required>
+                    <span id="name-feedback" class="form-feedback"></span>
                 </p>
 
                 <p>
@@ -59,6 +60,7 @@
                         name="email"
                         autocomplete="email"
                         required>
+                    <span id="email-feedback" class="form-feedback"></span>
                 </p>
 
                 <p>
@@ -67,7 +69,9 @@
                         type="tel"
                         id="phone"
                         name="phone"
-                        autocomplete="tel">
+                        autocomplete="tel"
+                        required>
+                    <span id="phone-feedback" class="form-feedback"></span>
                 </p>
 
                 <p>
@@ -75,7 +79,9 @@
                     <input
                         type="date"
                         id="date"
-                        name="date">
+                        name="date"
+                        required>
+                    <span id="date-feedback" class="form-feedback"></span>
                 </p>
             </fieldset>
 
@@ -102,6 +108,8 @@
 
                     <label for="contact-phone">Phone</label>
                 </p>
+
+                <span id="contact-method-feedback" class="form-feedback"></span>
             </fieldset>
 
             <fieldset>
@@ -110,13 +118,15 @@
                 <p>
                     <label for="topic">Topic:</label>
 
-                    <select id="topic" name="topic">
+                    <select id="topic" name="topic" required>
                         <option value="">Select a topic</option>
                         <option value="programming">Programming</option>
                         <option value="cybersecurity">Cybersecurity</option>
                         <option value="web-development">Web Development</option>
                         <option value="other">Other</option>
                     </select>
+
+                    <span id="topic-feedback" class="form-feedback"></span>
                 </p>
 
                 <p>
@@ -126,7 +136,10 @@
                         id="message"
                         name="message"
                         rows="6"
+                        minlength="10"
                         required></textarea>
+
+                    <span id="message-feedback" class="form-feedback"></span>
                 </p>
 
                 <p>
@@ -145,7 +158,35 @@
             <button type="submit">Send Message</button>
             <button type="reset">Clear Form</button>
 
+            <p id="form-status" class="form-status"></p>
+
         </form>
+    </section>
+
+    <section class="form-summary">
+        <h2>Submission Summary</h2>
+
+        <div id="submission-summary">
+            <p>
+                Your validated information will appear here after
+                successfully submitting the form.
+            </p>
+        </div>
+    </section>
+
+    <section class="api-section">
+        <h2>Public API Demonstration</h2>
+
+        <p>
+            This section loads a random programming-related fact
+            from a public API.
+        </p>
+
+        <div id="api-status">
+            Loading API data...
+        </div>
+
+        <div id="api-result"></div>
     </section>
 
     <aside class="contact-info">

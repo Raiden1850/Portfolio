@@ -327,11 +327,6 @@ footer {
     border-top: 5px solid var(--accent-color);
 }
 
-
-/* ========================================
-   CSS EXPERIMENT: !important
-   ======================================== */
-
 .css-experiment {
     grid-column: 1 / -1;
     background-color: var(--card-color);
@@ -374,9 +369,6 @@ footer {
     border-radius: 3px;
     font-family: monospace;
 }
-/* ========================================
-   CSS EXPERIMENT: CENTERING A DIV
-   ======================================== */
 
 .centering-test {
     height: 250px;
@@ -397,10 +389,6 @@ footer {
     font-weight: 600;
     border-radius: 8px;
 }
-
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
 
 @media (max-width: 900px) {
     .grid-container {
@@ -628,4 +616,81 @@ footer {
 .home-button:hover {
     background: var(--secondary);
     transform: translateY(-2px);
+}
+
+.form-feedback {
+    display: block;
+    min-height: 22px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-feedback.valid {
+    color: #198754;
+}
+
+.form-feedback.invalid {
+    color: #dc3545;
+}
+
+input.valid,
+select.valid,
+textarea.valid {
+    border: 2px solid #198754;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border: 2px solid #dc3545;
+}
+
+.form-status {
+    min-height: 25px;
+    font-weight: 600;
+}
+
+.form-summary,
+.api-section {
+    grid-column: 1 / -1;
+    background-color: var(--card-color);
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+#submission-summary {
+    padding: 20px;
+    background-color: #eef4f5;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+#submission-summary ul {
+    margin-bottom: 0;
+}
+
+#api-status {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #eef4f5;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+#api-result {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.api-error {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.api-success {
+    color: #198754;
+    font-weight: 600;
 }
